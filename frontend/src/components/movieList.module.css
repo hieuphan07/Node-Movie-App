@@ -1,0 +1,56 @@
+.type {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1rem 0 0 1rem;
+}
+
+.items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+  list-style: none;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding: 1rem;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one {
+  height: 16rem;
+}
+
+.two {
+  height: 9rem;
+}
+
+.poster {
+  height: 15rem;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.backdrop {
+  width: 15rem;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.poster:hover,
+.backdrop:hover {
+  transform: scale(1.05);
+  z-index: 99;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}

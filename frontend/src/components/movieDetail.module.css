@@ -1,0 +1,44 @@
+.detailContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 25rem;
+  padding: 1rem;
+  /* background: rgba(211, 189, 189, 0.5); */
+  color: white;
+  z-index: 99;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 50%;
+  padding-left: 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  border-bottom: solid white 2px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.date,
+.vote {
+  font-weight: bold;
+}
+
+.overview {
+  margin-top: 1rem;
+}
+
+.video {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: auto;
+}
