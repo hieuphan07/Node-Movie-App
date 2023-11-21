@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const port = 5050;
 
@@ -15,6 +16,11 @@ const authorization = require('./middleware/auth');
 // Setting
 app.use(bodyParser.json());
 app.use(bodyParser.text());
+app.use(
+	cors({
+		origin: '*',
+	})
+);
 
 // Check priority auth
 app.use(authorization);

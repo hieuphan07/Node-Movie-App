@@ -1,26 +1,19 @@
 module.exports = pagination = (data, page = 1, pageSize = 10, sortText) => {
-	const totalResults = data.length;
-	const totalPages = Math.ceil(totalResults / pageSize);
-	const startResultFromPage = (page - 1) * pageSize;
-	let sortedResults;
-	let finalResults;
+	const parsedPage = parseInt(page);
+	const parsedPageSize = parseInt(pageSize);
+
+	const totalPages = Math.ceil(data.length / parsedPageSize);
+	const cappedPage = Math.max(1, Math.min(parsedPage, parsedPageSize));
+	const offset = (cappedPage - 1) * parsedPageSize;
+
+	let sortedResults = data;
 
 	if (sortText) {
-		sortedResults = data.sort((a, b) => b[sortText] - a[sortText]);
-	} else {
-		sortedResults = data;
-	}
-
-	if (page >= totalPages) {
-		finalResults = sortedResults.splice((totalPages - 1) * pageSize, pageSize);
-	} else if (page < 1) {
-		finalResults = sortedResults.splice(0, pageSize);
-	} else {
-		finalResults = sortedResults.splice(startResultFromPage, pageSize);
+		data.sort((a, b) => b[sortText] - a[sortText]);
 	}
 
 	return {
-		moviesData: finalResults,
+		moviesData: sortedResults.slice(offset, offset + parsedPageSize),
 		totalPages,
 	};
 };
