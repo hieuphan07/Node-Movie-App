@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-	BrowserRouter,
-	Routes,
-	Route,
-	createBrowserRouter,
-	RouterProvider,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Browse from './pages/browse/Browse';
 import Search from './pages/search/Search';
