@@ -26,7 +26,8 @@ const ApiProvider = ({ children }) => {
 		fetchHorrorMovies: `/api/movies/discover?token=${localApiKey}&category=horror`,
 		fetchRomanceMovies: `/api/movies/discover?token=${localApiKey}&category=romance`,
 		fetchDocumentaries: `/api/movies/discover?token=${localApiKey}&category=documentary`,
-		fetchSearch: `/search/movie?api_key=${API_KEY}&language=en-US`,
+		fetchSearch: `/api/movies/search?token=${localApiKey}`,
+		fetchTrailer: `/api/movies/video?token=${localApiKey}`,
 	};
 	return (
 		<ApiContext.Provider
