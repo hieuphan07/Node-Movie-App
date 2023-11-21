@@ -2,8 +2,7 @@ const Trailer = require('../models/Trailer');
 const pagination = require('../utils/paging');
 
 exports.getTrailer = (req, res, next) => {
-	let videoId = 760104;
-	// let videoId = req.params.id;
+	const videoId = req.query.id || 760104;
 
 	Trailer.findTrailerById(videoId, (trailerOrTeaser) => {
 		if (trailerOrTeaser?.message) {

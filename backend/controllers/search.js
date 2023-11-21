@@ -4,7 +4,7 @@ const pagination = require('../utils/paging');
 exports.searchMovies = (req, res, next) => {
 	let keywords = req.query.keywords;
 
-	let pageSize = req.query.pageSize || 10;
+	let pageSize = req.query.pageSize || 20;
 	let page = req.query.page || 1;
 
 	Search.searchMovies(keywords, (movies) => {

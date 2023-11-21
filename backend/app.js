@@ -1,6 +1,6 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const app = express();
 const bodyParser = require('body-parser');
 const port = 5050;
 
@@ -21,6 +21,12 @@ app.use(
 		origin: '*',
 	})
 );
+// Allow request from different local host address
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
+	next();
+});
 
 // Check priority auth
 app.use(authorization);

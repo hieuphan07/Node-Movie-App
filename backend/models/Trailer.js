@@ -11,7 +11,9 @@ module.exports = class Trailer {
 			if (!err) {
 				const parsedFileContent = JSON.parse(fileContent);
 				if (id) {
-					const resultById = parsedFileContent.find((curr) => curr.id === id);
+					const resultById = parsedFileContent.find(
+						(curr) => curr.id === parseInt(id)
+					);
 
 					if (resultById) {
 						const videos = resultById.videos;

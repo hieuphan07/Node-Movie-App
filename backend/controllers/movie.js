@@ -3,7 +3,7 @@ const pagination = require('../utils/paging');
 
 // Get trending movies
 exports.getTrending = (req, res, next) => {
-	let pageSize = req.query.pageSize || 10;
+	let pageSize = req.query.pageSize || 20;
 	let page = req.query.page || 1;
 	Movies.fetchAll((movies) => {
 		const parsedMovies = JSON.parse(movies);
@@ -23,7 +23,7 @@ exports.getTrending = (req, res, next) => {
 
 // Get top rated movies
 exports.getTopRated = (req, res, next) => {
-	let pageSize = req.query.pageSize || 10;
+	let pageSize = req.query.pageSize || 20;
 	let page = req.query.page || 1;
 	Movies.fetchAll((movies) => {
 		const parsedMovies = JSON.parse(movies);
@@ -44,7 +44,7 @@ exports.getTopRated = (req, res, next) => {
 // Get movies by category
 exports.getDiscover = (req, res, next) => {
 	const category = req.query.category ? req.query.category : null;
-	let pageSize = req.query.pageSize || 10;
+	let pageSize = req.query.pageSize || 20;
 	let page = req.query.page || 1;
 
 	Movies.getMoviesByCategory(category, (movies) => {
